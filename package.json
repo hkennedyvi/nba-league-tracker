@@ -1,22 +1,22 @@
 {
-  "name": "project2.github.io",
+  "name": "project2",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "npm run lint",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hkennedyvi/project2.github.io.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hkennedyvi/project2.github.io/issues"
-  },
-  "homepage": "https://github.com/hkennedyvi/project2.github.io#readme",
-  "dependencies": {
-    "unirest": "^0.6.0"
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1"
   }
 }
