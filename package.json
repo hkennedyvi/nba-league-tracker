@@ -1,22 +1,22 @@
 {
-  "name": "project2.github.io",
+  "name": "",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hkennedyvi/project2.github.io.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hkennedyvi/project2.github.io/issues"
-  },
-  "homepage": "https://github.com/hkennedyvi/project2.github.io#readme",
   "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.16.3",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.2",
+    "express-handlebars": "^3.1.0",
     "unirest": "^0.6.0"
   }
 }
