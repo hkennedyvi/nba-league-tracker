@@ -1,21 +1,18 @@
 const authKey = "6adwam4h8umugdtsftp4wwae";
-let date = $(this).text();
-const queryUrl = "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/games/2020/02/" + date + "/schedule.json?api_key=" + authKey;
-const queryUrl2 = "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/games/2019/REG/schedule.json?api_key=" + authKey;
-const queryUrl3 = "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/leaders.json?api_key=" + authKey;
-const queryUrl4 = "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/standings.json?api_key=" + authKey;
-const queryUrl5 = "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/players/ab532a66-9314-4d57-ade7-bb54a70c65ad/profile.json?api_key=" + authKey;
+const statsQuery = "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/leaders.json?api_key=" + authKey;
+const standingsQuery = "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/standings.json?api_key=" + authKey;
+const playerQuery = "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/players/ab532a66-9314-4d57-ade7-bb54a70c65ad/profile.json?api_key=" + authKey;
 let westTeams = [];
 let eastTeams = [];
 
 $("#stats-btn").on("click", function () {
 
   $.ajax({
-    url: queryUrl3,
+    url: statsQuery,
     method: 'GET',
     dataType: 'json',
     success: function (response) {
-      // console.log(response);
+
       let firstPoints = response.categories[1].ranks[0].player.full_name;
       let secondPoints = response.categories[1].ranks[1].player.full_name;
       let thirdPoints = response.categories[1].ranks[2].player.full_name;
@@ -48,7 +45,7 @@ function giveRank(team) {
 $("#search-btn").on("click", function () {
 
   $.ajax({
-    url: queryUrl4,
+    url: standingsQuery,
     method: 'GET',
     dataType: 'json',
     success: function (response) {
@@ -84,7 +81,7 @@ $("#search-btn").on("click", function () {
 $("#player-btn").on("click", function () {
 
   $.ajax({
-    url: queryUrl5,
+    url: playerQuery,
     method: 'GET',
     dataType: 'json',
     success: function (response) {
