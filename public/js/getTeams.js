@@ -1,10 +1,7 @@
 $(document).ready(function() {
+  $("li").on("click", function() {
+    console.log($(this).value());
+  });
 
-    $("li").on("click", function() {
-        console.log($(this).value());
- 
-    })
-
-    console.log($("li").text())
-
-})
+  console.log($("li").text());
+});

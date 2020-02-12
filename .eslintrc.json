@@ -19,10 +19,12 @@
     "no-empty-function": "error",
     "no-multi-spaces": "error",
     "no-unused-vars": "error",
-    "camelcase": "error",
     "indent": ["error", 2],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
     "prettier/prettier": "error"
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
   }
 }

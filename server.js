@@ -23,15 +23,19 @@ app.use(express.json());
 app.use(express.static("./public"));
 
 // setting up handlebars
-app.engine("handlebars", exphbs({ defaultLayout: "main",
-layoutsDir: __dirname + '/views/layouts/',
-partialsDir: __dirname + '/views/partials/' }));
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+    layoutsDir: __dirname + "/views/layouts/",
+    partialsDir: __dirname + "/views/partials/"
+  })
+);
 app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);
-
 
 // const routes = require("./controllers/file.js");
 // app.use(routes);
