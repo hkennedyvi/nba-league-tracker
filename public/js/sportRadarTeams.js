@@ -17,6 +17,7 @@ $(document).ready(function() {
       //all the divisions get pushed into this array as arrays; so 6 seperate arrays within the allTeamsArrays
       const allTeamsArrays = []; //  example output: allTeamsArray = [ [{}], [{}], [{}], [{}], [{}], [{}] ]
       allTeamsArrays.push(
+        // each sub array actually contains 5 objects(the teams)
         southEast,
         atlantic,
         central,
@@ -25,9 +26,9 @@ $(document).ready(function() {
         pacific
       );
 
-      // double mapping allTeamsArrays, then mapping the arrays within it as well; basically a double map function
-      // then it spits out all 30 objects(teams) into one new array; no more nested arrays ;)
-      // example output: allTeams = [ {}, {}, {}, {}, {}, {} ]
+      // mapping allTeamsArrays, then mapping the arrays within it as well; basically a double map function
+      // then it spits out all 30 objects(teams) into one new array. No more nested arrays ;)
+      // example output: allTeams = [ {}, {}, {}, {}, {}, {} ] // actual result is 30 objects(total # of teams) in allTeams
       var allTeams = [];
       allTeamsArrays.map(function(subArray) {
         subArray.map(function(obj) {
@@ -36,14 +37,12 @@ $(document).ready(function() {
       });
 
       const teamsList = allTeams.map(teams => {
-        console.log(teams.id);
+        //generates a li element for each team listing the team name and applying the team id as its value.
         return `<li class="list-group-item" value="${teams.id}">${teams.name}</li>`;
       });
 
+      // appending the li elements to the "ul" element within teams.handlebars
       $("ul").append(teamsList);
-
-
-
     }
   });
 });
