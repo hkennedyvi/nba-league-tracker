@@ -1,0 +1,29 @@
+#navBtns {
+    position: absolute !important;
+    right: 0 !important;
+    margin-right: 20px;
+}
+
+.navbar-brand {
+    float: left !important;
+    position: absolute !important;
+    left: 60px;
+    color: white !important;
+}
+
+#starredBtn {
+    margin-left: 10px;
+}
+
+#navImg {
+    height: 75px;
+}
+
+h1 {
+    text-align: center;
+    font-family: fantasy;
+}
+
+#bounceimg {
+    height: 300px;
+}
