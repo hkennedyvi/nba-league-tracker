@@ -37,7 +37,6 @@ $(document).ready(function() {
       });
 
       const teamsList = allTeams.map(teams => {
-        //generates a li element for each team listing the team name and applying the team id as its value.
         return `<li class="list-group-item" value="${teams.id}">${teams.name}</li>`;
       });
 
