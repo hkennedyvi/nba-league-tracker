@@ -10,11 +10,13 @@
     "lint": "eslint --quiet .",
     "fix": "eslint --fix ."
   },
+  "parser": "babel-eslint",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
+    "babel-eslint": "^10.0.3",
     "express": "^4.16.3",
     "express-handlebars": "^3.1.0",
     "moment": "^2.24.0",
@@ -25,7 +27,6 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1"
+    "eslint-plugin-prettier": "^3.1.2"
   }
 }
