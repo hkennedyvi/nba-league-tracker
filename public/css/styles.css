@@ -51,6 +51,7 @@ body {
 
 .list-group-item {
     font-weight: bold;
+    background-color: orange;
 }
 
 .card {
@@ -77,4 +78,10 @@ body {
 #star {
     height: 20px;
     margin-bottom: 5px;
+}
+
+.teamList {
+  border: 5px solid blue;
+  padding: 0 !important;
+  text-align: center;
 }
