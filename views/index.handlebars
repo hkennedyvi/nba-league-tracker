@@ -21,22 +21,72 @@
       <a class="btn btn-light" href="score">Score</a>
     </div>
     <div id="starredBtn">
-      <a class="btn btn-light" href="starred">My <img id="star" src="https://img.icons8.com/emoji/48/000000/star-emoji.png"> Players</a>
+      <a class="btn btn-light" href="starred">My <img id="star"
+          src="https://img.icons8.com/emoji/48/000000/star-emoji.png"> Players</a>
     </div>
   </div>
-  {{!-- <div class="row">
-    <div class="col-md-12 blog-container">
-    </div>
-  </div> --}}
+
 
 
 </nav>
 
 <h1 id="cardTitle">Current Games</h1>
 
+<ul id="west-list" style="max-width: 18rem;"></ul>
+<ul id="east-list" style="max-width: 18rem;"></ul>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2.5">
+      <div class="card text-white shadow-lg" style="max-width: 18rem;">
+        <div class="card-header bg-primary">
+          <h3>POINTS LEADERS:</h3>
+        </div>
+        <div class="card-body bg-light">
+          <ul class="list-group list-group-flush text-dark shadow-sm">
+            <li class="list-group-item" id="first-points">1. </li>
+            <li class="list-group-item" id="second-points">2. </li>
+            <li class="list-group-item" id="third-points">3. </li>
+          </ul>
+        </div>
+      </div><br>
+    </div>
+
+    <div class="col-md-2.5">
+      <div class="card text-white shadow-lg" style="max-width: 18rem;">
+        <div class="card-header bg-primary">
+          <h3>ASSISTS LEADERS:</h3>
+        </div>
+        <div class="card-body bg-light">
+          <ul class="list-group list-group-flush text-dark shadow-sm">
+            <li class="list-group-item" id="first-assists">1. </li>
+            <li class="list-group-item" id="second-assists">2. </li>
+            <li class="list-group-item" id="third-assists">3. </li>
+          </ul>
+        </div>
+      </div><br>
+    </div>
+
+    <div class="col-md-2.5">
+      <div class="card text-white shadow-lg" style="max-width: 18rem;">
+        <div class="card-header bg-primary">
+          <h3>REBOUNDS LEADERS:</h3>
+        </div>
+        <div class="card-body bg-light">
+          <ul class="list-group list-group-flush text-dark shadow-sm">
+            <li class="list-group-item" id="first-rebounds">1. </li>
+            <li class="list-group-item" id="second-rebounds">2. </li>
+            <li class="list-group-item" id="third-rebounds">3. </li>
+          </ul>
+        </div>
+      </div><br>
+    </div>
+  </div>
+</div>
 
 
 
 <!-- Custom Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
 <script src="js/sportRadarCurrent.js" type="text/javascript"></script>
+<script src="js/sportRadarStats.js" type="text/javascript"></script>
