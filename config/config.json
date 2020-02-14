@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "4663",
-    "database": "blogger",
+    "password": "1990",
+    "database": "basketball_db",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
