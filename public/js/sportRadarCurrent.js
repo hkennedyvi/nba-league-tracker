@@ -6,20 +6,6 @@ $(document).ready(function() {
   const CurrentGamesCall = `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/
 trial/v7/en/games/${year}/${month}/${day}/schedule.json?api_key=mwmtcg88b36qyudz6mqsxghj`;
 
-
-$(document).ready(function() {
-    $.ajax({
-        url: CurrentGamesCall,
-        method: "GET",
-        dataType: "json",
-        success: function(response) {
-            const gamesArray = response.games;
-            console.log(gamesArray);
-            const CurrentGames = gamesArray.map(gamesObject => {
-                return `
-                
-                <div class="card text-white shadow-lg" style="max-width: 100%; float:left;">
-
   $.ajax({
     url: CurrentGamesCall,
     method: "GET",
@@ -45,9 +31,9 @@ $(document).ready(function() {
                     <li class="list-group-item">Away Team: ${gamesObject.away.name}</li>
                   </ul>
                 </div>
-              </div>`;
-            });
-            $("body").append(CurrentGames);
-        }
-    });
+              </div><br>`;
+      });
+      $("body").append(CurrentGames);
+    }
+  });
 });
