@@ -57,6 +57,7 @@ body {
 .card {
     border: 5px solid rgb(2, 2, 196);
     margin-right: 20px;
+    height: 480px !important;
 }
 
 #bounceimg {
@@ -75,13 +76,17 @@ body {
     right: 0 !important;
 }
 
+.teamImgs {
+    height: 60px !important;
+}
+
 #star {
     height: 20px;
     margin-bottom: 5px;
 }
 
 .teamList {
-  border: 5px solid blue;
-  padding: 0 !important;
-  text-align: center;
+    border: 5px solid blue;
+    padding: 0 !important;
+    text-align: center;
 }
