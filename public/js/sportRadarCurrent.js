@@ -21,7 +21,9 @@ trial/v7/en/games/${year}/${month}/${day}/schedule.json?api_key=mwmtcg88b36qyudz
         return `<div class="card text-white shadow-lg" style="max-width: 18rem;">
                 <div class="card-header bg-primary">
                   <h3>Status: ${gamesObject.status}</h3>
+                  <img src="/assets/img/nbaLogos/${gamesObject.home.id}.png"/>
                   <h4>Home points: ${gamesObject.home_points}</h4>
+                  <img src="/assets/img/nbaLogos/${gamesObject.away.id}.png"/>
                   <h4>away points: ${gamesObject.away_points}</h4>
                 </div>
                 <div class="card-body bg-light">
