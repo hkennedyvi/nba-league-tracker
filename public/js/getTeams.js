@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   $("ul").on("click", "li", function() {
     const teamId = $(this).attr("value");
 
@@ -57,4 +58,5 @@ $(document).ready(function() {
       }
     });
   });
+
 });
