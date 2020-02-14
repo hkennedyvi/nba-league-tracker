@@ -6,12 +6,12 @@ const standingsQuery =
   "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/standings.json?api_key=" +
   authKey;
 
-$(document).ready(function () {
+$(document).ready(function() {
   $.ajax({
     url: statsQuery,
     method: "GET",
     dataType: "json",
-    success: function (response) {
+    success: function(response) {
       let firstPoints = response.categories[1].ranks[0].player.full_name;
       let secondPoints = response.categories[1].ranks[1].player.full_name;
       let thirdPoints = response.categories[1].ranks[2].player.full_name;
@@ -60,12 +60,12 @@ $(document).ready(function () {
   });
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
   $.ajax({
     url: standingsQuery,
     method: "GET",
     dataType: "json",
-    success: function (response) {
+    success: function(response) {
       const southEast = response.conferences[0].divisions[0].teams;
       const atlantic = response.conferences[0].divisions[1].teams;
       const central = response.conferences[0].divisions[2].teams;
@@ -81,7 +81,7 @@ $(document).ready(function () {
       let westTeams = [];
 
       function giveWestRank(team) {
-        team.map(function (obj) {
+        team.map(function(obj) {
           westTeams.push(obj);
         });
       }
@@ -100,7 +100,7 @@ $(document).ready(function () {
       let eastTeams = [];
 
       function giveEastRank(team) {
-        team.map(function (obj) {
+        team.map(function(obj) {
           eastTeams.push(obj);
         });
       }
