@@ -1,27 +1,27 @@
 $(document).ready(() => {
 
-  const idArray = [];
+    const idArray = [];
 
-  $.get("/api/starred", function(playersArray) {
-    playersArray.map(playerId => {
-      const playerQueryId = playerId.api_id;
-      idArray.push(playerQueryId);
-    });
+    $.get("/api/starred", function(playersArray) {
+        playersArray.map(playerId => {
+            const playerQueryId = playerId.api_id;
+            idArray.push(playerQueryId);
+        });
 
-    console.log(idArray);
+        console.log(idArray);
 
-   for(let i=0; i<idArray.length; i++) {
-    setTimeout( function timer(){
+        for (let i = 0; i < idArray.length; i++) {
+            setTimeout(function timer() {
 
-        $.ajax({
-            url: `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/players/${idArray[i]}/profile.json?api_key=mwmtcg88b36qyudz6mqsxghj`,
-            method: "GET",
-            dataType: "json",
-            success: function(response) {
-                console.log(response);
+                $.ajax({
+                    url: `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/players/${idArray[i]}/profile.json?api_key=mwmtcg88b36qyudz6mqsxghj`,
+                    method: "GET",
+                    dataType: "json",
+                    success: function(response) {
+                        console.log(response);
 
-                const starredPlayer = () => {
-                    return `<div class="card text-white shadow-lg" style="max-width: 18rem;">
+                        const starredPlayer = () => {
+                            return `<div class="card text-white shadow-lg" style="max-width: 18rem; float: left;">
                   <div class="card-header bg-primary">
                     <h3>${response.full_name}</h3>
                   </div>
@@ -32,18 +32,15 @@ $(document).ready(() => {
                       <li class="list-group-item">status: ${response.status}</li>
                       </ul>
                   </div>
-                </div><br>`;
-                }
+                </div>`;
+                        }
 
-              $("body").append(starredPlayer());
-            }
-          });
+                        $("body").append(starredPlayer());
+                    }
+                });
 
-    }, i*1000);
-   } 
+            }, i * 1000);
+        }
 
-  });
+    });
 });
-
-
-
