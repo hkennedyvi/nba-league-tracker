@@ -1,7 +1,23 @@
+body {
+    background-image: url("../assets/img/court.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #navBtns {
     position: absolute !important;
-    right: 0 !important;
-    margin-right: 20px;
+    right: 320px !important;
+    background-color: rgb(35, 79, 167) !important;
+}
+
+.btn-light {
+    background-color: transparent !important;
+    border: none;
+    color: white;
+}
+
+.navbar {
+    border: 3px solid white;
 }
 
 .navbar-brand {
@@ -9,6 +25,8 @@
     position: absolute !important;
     left: 60px;
     color: white !important;
+    font-size: 45px !important;
+    font-family: fantasy;
 }
 
 #starredBtn {
@@ -16,14 +34,47 @@
 }
 
 #navImg {
-    height: 75px;
+    height: 55px;
 }
 
-h1 {
+#cardTitle {
     text-align: center;
     font-family: fantasy;
+    /* background-color: lightgray; */
+    margin-top: 30px;
+    color: white;
+}
+
+.card-header {
+    text-align: center;
+}
+
+.list-group-item {
+    font-weight: bold;
+}
+
+.card {
+    border: 5px solid rgb(2, 2, 196);
+    margin-right: 20px;
 }
 
 #bounceimg {
-    height: 300px;
+    height: 200px;
+    margin-top: 25px;
+}
+
+#hoop {
+    height: 120px;
+    margin-top: 40px !important;
+    /* float: right; */
+}
+
+#images {
+    position: absolute;
+    right: 0 !important;
+}
+
+#star {
+    height: 20px;
+    margin-bottom: 5px;
 }

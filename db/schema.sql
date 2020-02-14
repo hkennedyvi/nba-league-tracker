@@ -4,6 +4,5 @@ USE basketball_db;
 
 CREATE TABLE players (
     name VARCHAR(100) NOT NULL,
-    api_id VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id)
+    api_id VARCHAR(100) NOT NULL
 );

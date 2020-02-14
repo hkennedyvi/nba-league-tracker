@@ -10,7 +10,7 @@
     "lint": "eslint --quiet .",
     "fix": "eslint --fix ."
   },
-  "parser": "babel-eslint", 
+  "parser": "babel-eslint",
   "keywords": [],
   "author": "",
   "license": "ISC",
