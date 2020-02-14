@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   const teamsCall =
     "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/league/hierarchy.json?api_key=mwmtcg88b36qyudz6mqsxghj";
 
@@ -6,7 +6,7 @@ $(document).ready(function() {
     url: teamsCall,
     method: "GET",
     dataType: "json",
-    success: function(response) {
+    success: function (response) {
       // team responses are seperated into conferences and then further seperated into divisons
       const southEast = response.conferences[0].divisions[0].teams;
       const atlantic = response.conferences[0].divisions[1].teams;
@@ -31,14 +31,16 @@ $(document).ready(function() {
       // then it spits out all 30 objects(teams) into one new array. No more nested arrays ;)
       // example output: allTeams = [ {}, {}, {}, {}, {}, {} ] // actual result is 30 objects(total # of teams) in allTeams
       var allTeams = [];
-      allTeamsArrays.map(function(subArray) {
-        subArray.map(function(obj) {
+      allTeamsArrays.map(function (subArray) {
+        subArray.map(function (obj) {
           allTeams.push(obj);
         });
       });
 
       const teamsList = allTeams.map(teams => {
-        return `<li class="list-group-item" value="${teams.id}">${teams.name}</li>`;
+        return `
+        <div class="teamList container col-6">
+        <li class="list-group-item" value="${teams.id}">${teams.name}</li></div>`;
       });
 
       // appending the li elements to the "ul" element within teams.handlebars
