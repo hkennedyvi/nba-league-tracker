@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   const teamsCall =
     "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/league/hierarchy.json?api_key=y8panhwvn9mvan3qad5efwug";
 
@@ -16,19 +15,17 @@ $(document).ready(function() {
       const southWest = response.conferences[1].divisions[1].teams;
       const pacific = response.conferences[1].divisions[2].teams;
 
-
-            //all the divisions get pushed into this array as arrays; so 6 seperate arrays within the allTeamsArrays
-            const allTeamsArrays = []; //  example output: allTeamsArray = [ [{}], [{}], [{}], [{}], [{}], [{}] ]
-            allTeamsArrays.push(
-                // each sub array actually contains 5 objects(the teams)
-                southEast,
-                atlantic,
-                central,
-                northWest,
-                southWest,
-                pacific
-            );
-
+      //all the divisions get pushed into this array as arrays; so 6 seperate arrays within the allTeamsArrays
+      const allTeamsArrays = []; //  example output: allTeamsArray = [ [{}], [{}], [{}], [{}], [{}], [{}] ]
+      allTeamsArrays.push(
+        // each sub array actually contains 5 objects(the teams)
+        southEast,
+        atlantic,
+        central,
+        northWest,
+        southWest,
+        pacific
+      );
 
       // mapping allTeamsArrays, then mapping the arrays within it as well; basically a double map function
       // then it spits out all 30 objects(teams) into one new array. No more nested arrays ;)
@@ -40,15 +37,14 @@ $(document).ready(function() {
         });
       });
 
-
-            const teamsList = allTeams.map(teams => {
-                return `
+      const teamsList = allTeams.map(teams => {
+        return `
         <div class="teamList container col-4">
         <li class="list-group-item teamText" value="${teams.id}"><img class="teamImgs2" src="./assets/img/nbaLogos/${teams.id}.png"/>${teams.name}</li></div>`;
-            });
+      });
 
-            // appending the li elements to the "ul" element within teams.handlebars
-            $("ul").append(teamsList);
-        }
-    });
+      // appending the li elements to the "ul" element within teams.handlebars
+      $("ul").append(teamsList);
+    }
+  });
 });
