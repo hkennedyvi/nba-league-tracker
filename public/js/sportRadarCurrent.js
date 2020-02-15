@@ -3,7 +3,8 @@ $(document).ready(function() {
     const month = moment().format("MM");
     const day = moment().format("D");
 
-    const CurrentGamesCall = `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/
+
+  const CurrentGamesCall = `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/
 trial/v7/en/games/${year}/${month}/${day}/schedule.json?api_key=y8panhwvn9mvan3qad5efwug`;
 
     $.ajax({
