@@ -1,12 +1,12 @@
-$(document).ready(function () {
+$(document).ready(function() {
   const teamsCall =
-    "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/league/hierarchy.json?api_key=mwmtcg88b36qyudz6mqsxghj";
+    "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/league/hierarchy.json?api_key=y8panhwvn9mvan3qad5efwug";
 
   $.ajax({
     url: teamsCall,
     method: "GET",
     dataType: "json",
-    success: function (response) {
+    success: function(response) {
       // team responses are seperated into conferences and then further seperated into divisons
       const southEast = response.conferences[0].divisions[0].teams;
       const atlantic = response.conferences[0].divisions[1].teams;
@@ -31,8 +31,8 @@ $(document).ready(function () {
       // then it spits out all 30 objects(teams) into one new array. No more nested arrays ;)
       // example output: allTeams = [ {}, {}, {}, {}, {}, {} ] // actual result is 30 objects(total # of teams) in allTeams
       var allTeams = [];
-      allTeamsArrays.map(function (subArray) {
-        subArray.map(function (obj) {
+      allTeamsArrays.map(function(subArray) {
+        subArray.map(function(obj) {
           allTeams.push(obj);
         });
       });
