@@ -48,6 +48,7 @@ $(document).ready(() => {
         }
     });
 
+
     $("body").on("click", ".deleteplayer", function() {
         const id = $(this).attr("value");
         console.log(id);
@@ -59,3 +60,5 @@ $(document).ready(() => {
         });
     });
 });
+
+
