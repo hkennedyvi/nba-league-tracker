@@ -24,6 +24,7 @@ $(document).ready(function() {
                     <li class="list-group-item">STATUS : ${player.status}</li>
                     </ul>
                 </div>
+
               </div>`;
                 });
                 $(".teamplayers").append(playerList);
@@ -58,5 +59,4 @@ $(document).ready(function() {
             }
         });
     });
-
 });
