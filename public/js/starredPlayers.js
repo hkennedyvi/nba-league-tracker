@@ -1,13 +1,14 @@
 $(document).ready(() => {
   const idArray = [];
 
-  $.get("/api/starred", function(playersArray) {
-    playersArray.map(playerId => {
-      const playerQueryId = playerId.api_id;
-      idArray.push(playerQueryId);
-    });
 
-    console.log(idArray);
+    $.get("/api/starred", function(playersArray) {
+        playersArray.map(playerId => {
+            const playerQueryId = playerId.api_id;
+            idArray.push(playerQueryId);
+        });
+
+        console.log(idArray);
 
     for (let i = 0; i < idArray.length; i++) {
       setTimeout(function timer() {
@@ -20,14 +21,15 @@ $(document).ready(() => {
 
             const starredPlayer = () => {
               return `<div class="card text-white shadow-lg" style="max-width: 18rem;">
+
                   <div class="card-header bg-primary">
                     <h3>${response.full_name}</h3>
                   </div>
                   <div class="card-body b-light">
                     <ul class="list-group list-group-flush text-dark shadow-sm">
-                      <li class="list-group-item">Position: ${response.position}</li>
-                      <li class="list-group-item">jersey: ${response.jersey_number}</li>
-                      <li class="list-group-item">status: ${response.status}</li>
+                      <li class="list-group-item">POSITION: &nbsp&nbsp ${response.position}</li>
+                      <li class="list-group-item">JERSEY: &nbsp&nbsp ${response.jersey_number}</li>
+                      <li class="list-group-item">STATUS: &nbsp&nbsp ${response.status}</li>
                       </ul>
                   </div>
                 </div><br>`;
@@ -40,3 +42,4 @@ $(document).ready(() => {
     }
   });
 });
+
