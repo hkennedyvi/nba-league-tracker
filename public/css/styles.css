@@ -2,6 +2,7 @@ body {
     background-image: url("../assets/img/court.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 #navBtns {
@@ -18,6 +19,7 @@ body {
 
 .navbar {
     border: 3px solid white;
+    margin-bottom: 40px !important;
 }
 
 .navbar-brand {
@@ -41,7 +43,6 @@ body {
     text-align: center;
     font-family: fantasy;
     /* background-color: lightgray; */
-    margin-top: 30px;
     color: white;
 }
 
@@ -50,14 +51,23 @@ body {
 }
 
 .list-group-item {
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-family: fantasy;
     background-color: orange;
+    color: white;
+    padding: 10 !important;
+    font-size: 25px;
+}
+
+.teamText {
+    font-size: 0px;
+    color: orange;
 }
 
 .card {
-    border: 5px solid rgb(2, 2, 196);
-    margin-right: 20px;
-    height: 480px !important;
+    border: 3px solid rgb(2, 2, 196);
+    /* margin-right: 20px; */
+    /* height: 480px !important; */
 }
 
 #bounceimg {
@@ -80,13 +90,18 @@ body {
     height: 60px !important;
 }
 
+.teamImgs2 {
+    height: 200px !important;
+    width: 200px !important;
+}
+
 #star {
     height: 20px;
     margin-bottom: 5px;
 }
 
 .teamList {
-    border: 5px solid blue;
+    border: 3px solid rgb(0, 0, 212);
     padding: 0 !important;
     text-align: center;
 }

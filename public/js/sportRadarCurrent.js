@@ -4,7 +4,7 @@ $(document).ready(function() {
     const day = moment().format("D");
 
     const CurrentGamesCall = `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/
-trial/v7/en/games/${year}/${month}/${day}/schedule.json?api_key=mwmtcg88b36qyudz6mqsxghj`;
+trial/v7/en/games/${year}/${month}/${day}/schedule.json?api_key=y8panhwvn9mvan3qad5efwug`;
 
     $.ajax({
         url: CurrentGamesCall,
@@ -18,7 +18,7 @@ trial/v7/en/games/${year}/${month}/${day}/schedule.json?api_key=mwmtcg88b36qyudz
                     gamesObject.home_points = " ";
                     gamesObject.away_points = " ";
                 }
-                return `<div class="card text-white shadow-lg" style="max-width: 18rem; float:left;">
+                return `<div class="card text-white shadow-lg" style="max-width: 100%; float:left;">
                 <div class="card-header bg-primary">
                   <h3>Status: ${gamesObject.status}</h3>
                   
