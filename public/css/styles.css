@@ -52,11 +52,11 @@ body {
 
 .list-group-item {
     /* font-weight: bold; */
-    font-family: fantasy;
-    background-color: orange;
+    background-color: darkorange;
     color: white;
     padding: 10 !important;
-    font-size: 25px;
+    font-size: 20px;
+    font-style: italic;
 }
 
 .teamText {
@@ -68,6 +68,9 @@ body {
     border: 3px solid rgb(2, 2, 196);
     /* margin-right: 20px; */
     /* height: 480px !important; */
+    width: 300px !important;
+    height: 400px !important;
+    margin: 20PX !important;
 }
 
 #bounceimg {
@@ -100,8 +103,17 @@ body {
     margin-bottom: 5px;
 }
 
+#star2 {
+    height: 25px;
+}
+
 .teamList {
     border: 3px solid rgb(0, 0, 212);
     padding: 0 !important;
     text-align: center;
+}
+
+h3 {
+    font-family: fantasy;
+    font-weight: bold;
 }
