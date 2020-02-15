@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   $("ul").on("click", "li", function() {
     const teamId = $(this).attr("value");
 
@@ -12,17 +13,19 @@ $(document).ready(function() {
         $("ul").hide();
         const playerList = teamPlayers.map(player => {
           return `<div class="card text-white shadow-lg" style="max-width: 18rem;">
+
                 <div class="card-header bg-primary">
                   <h3>${player.full_name}</h3>
                   <button value="${player.id}">Save player</button>
                 </div>
                 <div class="card-body bg-light">
                   <ul class="list-group list-group-flush text-dark shadow-sm">
-                    <li class="list-group-item">Position: ${player.position}</li>
-                    <li class="list-group-item">jersey: ${player.jersey_number}</li>
-                    <li class="list-group-item">status: ${player.status}</li>
+                    <li class="list-group-item">POSITION : ${player.position}</li>
+                    <li class="list-group-item">JERSEY : ${player.jersey_number}</li>
+                    <li class="list-group-item">STATUS : ${player.status}</li>
                     </ul>
                 </div>
+
               </div><br>`;
         });
         $(".teamplayers").append(playerList);
@@ -54,8 +57,9 @@ $(document).ready(function() {
             .catch(error => {
               console.log("Error:", error);
             });
+
         });
-      }
     });
-  });
+
+
 });

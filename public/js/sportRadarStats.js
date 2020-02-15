@@ -1,10 +1,10 @@
 const authKey = "6adwam4h8umugdtsftp4wwae";
 const statsQuery =
-  "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/leaders.json?api_key=" +
-  authKey;
+    "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/leaders.json?api_key=" +
+    authKey;
 const standingsQuery =
-  "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/standings.json?api_key=" +
-  authKey;
+    "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/standings.json?api_key=" +
+    authKey;
 
 $(document).ready(function() {
   $.ajax({
@@ -21,41 +21,15 @@ $(document).ready(function() {
       let firstRebounds = response.categories[17].ranks[0].player.full_name;
       let secondRebounds = response.categories[17].ranks[1].player.full_name;
       let thirdRebounds = response.categories[17].ranks[2].player.full_name;
-      let leaders = `<div class="container-fluid">
-      <div class="row">
-        <div class="col-md-2.5">
-          <div class="card text-white shadow-lg">
-            <div class="card-header bg-primary">
-              <h5>SEASON POINTS LEADERS:</h5>
-              <h6>1. ${firstPoints}</h6>
-              <h6>2. ${secondPoints}</h6>
-              <h6>3. ${thirdPoints}</h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2.5">
-          <div class="card text-white shadow-lg">
-            <div class="card-header bg-primary">
-              <h5>SEASON ASSISTS LEADERS:</h5>
-              <h6>1. ${firstAssists}</h6>
-              <h6>2. ${secondAssists}</h6>
-              <h6>3. ${thirdAssists}</h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2.5">
-          <div class="card text-white shadow-lg">
-            <div class="card-header bg-primary">
-              <h5>SEASON REBOUNDS LEADERS:</h5>
-              <h6>1. ${firstRebounds}</h6>
-              <h6>2. ${secondRebounds}</h6>
-              <h6>3. ${thirdRebounds}</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>`;
-      $("#leader-div").append(leaders);
+      $("#first-points").append(firstPoints);
+      $("#second-points").append(secondPoints);
+      $("#third-points").append(thirdPoints);
+      $("#first-assists").append(firstAssists);
+      $("#second-assists").append(secondAssists);
+      $("#third-assists").append(thirdAssists);
+      $("#first-rebounds").append(firstRebounds);
+      $("#second-rebounds").append(secondRebounds);
+      $("#third-rebounds").append(thirdRebounds);
     }
   });
 });
@@ -73,12 +47,12 @@ $(document).ready(function() {
       const southWest = response.conferences[1].divisions[1].teams;
       const pacific = response.conferences[1].divisions[2].teams;
 
-      const westTeamsArray = [];
-      westTeamsArray.push(southEast, atlantic, central);
-      const eastTeamsArray = [];
-      eastTeamsArray.push(northWest, southWest, pacific);
+            const westTeamsArray = [];
+            westTeamsArray.push(southEast, atlantic, central);
+            const eastTeamsArray = [];
+            eastTeamsArray.push(northWest, southWest, pacific);
 
-      let westTeams = [];
+            let westTeams = [];
 
       function giveWestRank(team) {
         team.map(function(obj) {
@@ -87,17 +61,19 @@ $(document).ready(function() {
       }
       westTeamsArray.map(giveWestRank);
       const westTeamsList = westTeams.map(teams => {
-        return `{rank: ${teams.calc_rank.conf_rank}, name: ${teams.name}}`;
+        return `<li class="list-group-item" data-rank="${teams.calc_rank.conf_rank}">${teams.calc_rank.conf_rank}. ${teams.name}</li>`;
       });
       console.log("WEST: " + westTeamsList);
-      westTeamsList.sort();
+      westTeamsList.sort(function(a, b) {
+        return +$(a).data("rank") - +$(b).data("rank");
+      });
       console.log("NEW" + westTeamsList);
       westTeamsList.map(team => {
-        let position = `<li>${team}</li>`;
+        let position = `${team}`;
         $("#west-list").append(position);
       });
 
-      let eastTeams = [];
+            let eastTeams = [];
 
       function giveEastRank(team) {
         team.map(function(obj) {
@@ -106,15 +82,16 @@ $(document).ready(function() {
       }
       eastTeamsArray.map(giveEastRank);
       const eastTeamsList = eastTeams.map(teams => {
-        return `{rank: ${teams.calc_rank.conf_rank}, name: ${teams.name}}`;
+        return `<li class="list-group-item" data-rank="${teams.calc_rank.conf_rank}">${teams.calc_rank.conf_rank}. ${teams.name}</li>`;
       });
-      console.log("EAST: " + eastTeamsList);
-      eastTeamsList.sort();
-      console.log("NEW" + eastTeamsList);
+      eastTeamsList.sort(function(a, b) {
+        return +$(a).data("rank") - +$(b).data("rank");
+      });
       eastTeamsList.map(team => {
-        let position = `<li>${team}</li>`;
+        let position = `${team}`;
         $("#east-list").append(position);
       });
     }
   });
 });
+
