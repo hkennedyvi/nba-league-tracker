@@ -71,13 +71,15 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Howard Kennedy VI** - [hkennedyvi](https://github.com/hkennedyvi)
 * **Maxwell Countryman Skewes** - [maxskewes](https://github.com/maxskewes)
 
-## Link
-A [link](https://docs.google.com/presentation/d/1D1MqHB_yMzbULeGZQHHiOQURchFS6lX57I7i9Uk9CQQ/edit#slide=id.p)
- to the slides associated with the presentation of this app.
- 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
 
 ## Acknowledgments
 
