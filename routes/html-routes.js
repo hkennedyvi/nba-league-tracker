@@ -21,8 +21,4 @@ module.exports = function(app) {
   app.get("/starred", function(req, res) {
     res.render("starredPlayers");
   });
-
-  app.get("/standings", function(req, res) {
-    res.render("standings");
-  });
 };
