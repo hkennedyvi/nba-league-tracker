@@ -1,14 +1,12 @@
 var db = require("../models");
 
 module.exports = function(app) {
-
   // GET route for getting all of the players
   app.get("/api/starred", function(req, res) {
-    db.Player.findAll({})
-      .then(function(dbPlayer) {
-        res.json(dbPlayer);
-        console.log(dbPlayer);
-      });
+    db.Player.findAll({}).then(function(dbPlayer) {
+      res.json(dbPlayer);
+      console.log(dbPlayer);
+    });
   });
 
   // POST route for saving a new player

@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   $("ul").on("click", "li", function() {
     const teamId = $(this).attr("value");
 
@@ -39,24 +38,22 @@ $(document).ready(function() {
 
           const data = { name: playerName, api_id: playerId };
 
-        
-          fetch('/api/saveplayer', {
-            method: 'POST',
+          fetch("/api/saveplayer", {
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json"
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(data)
           })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log('Success:', data);
-          })
-          .catch((error) => {
-            console.log('Error:', error);
-          });
+            .then(response => response.json())
+            .then(data => {
+              console.log("Success:", data);
+            })
+            .catch(error => {
+              console.log("Error:", error);
+            });
         });
       }
     });
   });
-
 });
