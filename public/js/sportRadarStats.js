@@ -1,10 +1,10 @@
 const authKey = "6adwam4h8umugdtsftp4wwae";
 const statsQuery =
-    "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/leaders.json?api_key=" +
-    authKey;
+  "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/leaders.json?api_key=" +
+  authKey;
 const standingsQuery =
-    "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/standings.json?api_key=" +
-    authKey;
+  "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/standings.json?api_key=" +
+  authKey;
 
 $(document).ready(function() {
   $.ajax({
@@ -47,12 +47,12 @@ $(document).ready(function() {
       const southWest = response.conferences[1].divisions[1].teams;
       const pacific = response.conferences[1].divisions[2].teams;
 
-            const westTeamsArray = [];
-            westTeamsArray.push(southEast, atlantic, central);
-            const eastTeamsArray = [];
-            eastTeamsArray.push(northWest, southWest, pacific);
+      const westTeamsArray = [];
+      westTeamsArray.push(southEast, atlantic, central);
+      const eastTeamsArray = [];
+      eastTeamsArray.push(northWest, southWest, pacific);
 
-            let westTeams = [];
+      let westTeams = [];
 
       function giveWestRank(team) {
         team.map(function(obj) {
@@ -73,7 +73,7 @@ $(document).ready(function() {
         $("#west-list").append(position);
       });
 
-            let eastTeams = [];
+      let eastTeams = [];
 
       function giveEastRank(team) {
         team.map(function(obj) {
@@ -94,4 +94,3 @@ $(document).ready(function() {
     }
   });
 });
-

@@ -9,17 +9,49 @@ $(document).ready(function() {
     method: "GET",
     dataType: "json",
     success: function(response) {
-      console.log(response.games);
+      let today = new Date();
+      let todayMonth = today.toLocaleString("default", { month: "long" });
 
       for (i = 0; i < response.games.length; i++) {
-        let game = response.games[i].scheduled;
-        if (game === "2019-11-16T03:30:00+00:00") {
-          let gameTime = "2019-11-16T03:30:00+00:00";
-          let ts_hms = new Date(gameTime);
-          //   ts_hms.format("%d");
-          console.log(ts_hms);
-          console.log("A GAME IS PLAYED ON THIS DAY AT THIS TIME");
-          console.log($("#test"));
+        let gameObj = {
+          date: response.games[i].scheduled,
+          home: response.games[i].home.name,
+          away: response.games[i].away.name,
+          home_points: response.games[i].home_points,
+          away_points: response.games[i].away_points
+        };
+
+        let dateObjParsed = Date.parse(gameObj.date);
+        let dateObj = new Date(dateObjParsed);
+        let gameMonth = dateObj.toLocaleString("default", { month: "long" });
+        let gameDate = dateObj.toLocaleString("default", { day: "numeric" });
+        let gameDay = dateObj.toLocaleString("default", { weekday: "long" });
+
+        if (gameMonth === todayMonth) {
+          let dailyDiv = $(`<div data-date="${gameDate}">`);
+          let p = $("<p>").text(
+            "Month: " +
+              gameMonth +
+              " " +
+              "Date: " +
+              gameDate +
+              " " +
+              "Home: " +
+              gameObj.home +
+              " " +
+              "Score: " +
+              gameObj.home_points +
+              " " +
+              "Away: " +
+              gameObj.away +
+              " " +
+              "Score: " +
+              gameObj.away_points
+          );
+
+          dailyDiv.append(p);
+
+          $("#schedule").append(dailyDiv);
         }
       }
     }
