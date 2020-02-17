@@ -25,4 +25,8 @@ module.exports = function(app) {
   app.get("/standings", function(req, res) {
     res.render("standings");
   });
+
+  app.get("/schedule", function(req, res) {
+    res.render("schedule");
+  });
 };
