@@ -11,20 +11,23 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 Here is a list of the required dependencies:
-Axios ^0.19.2
-Babel-Eslint ^10.0.3
-Express ^4.16.3
-Express-Handlebars ^3.1.0
-Moment ^2.24.0
-MySql2 ^1.6.4
-Nodemon ^2.0.2
-Sequelize ^4.41.2
-
+* Axios ^0.19.2
+* Babel-Eslint ^10.0.3
+* Express ^4.16.3
+* Express-Handlebars ^3.1.0
+* Moment ^2.24.0
+* MySql2 ^1.6.4
+* Nodemon ^2.0.2
+* Sequelize ^4.41.2
+* Bcryptjs ^3.4.3
+* Passport ^0.4.0
+* Express-Session ^1.16.1
+* Dotenv ^8.2.0
 
 Follow the directions below to install them.
 
 
-
+ 
 ### Installing
 
 In the command line, install all necessary dependencies by typing and running 'npm install'. Then run the database. You may do this from the command line by entering 'mysql -u root -p < schema.sql', then entering your password (be sure to edit the password to match in the config.json file. You are also able to run the database by copying the contents of the schema.sql folder, pasting it into a new query tab, and then running it.
@@ -41,6 +44,7 @@ To deploy this app on a local host, run the app in the command line by entering 
 * [Node](https://nodejs.org)
 * [MySql](https://www.mysql.com/)
 * [CSS](https://www.w3schools.com/Css/)
+* [Bootstrap](https://getbootstrap.com/)
 
 
 =======
@@ -74,12 +78,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
 
 ## Acknowledgments
 
