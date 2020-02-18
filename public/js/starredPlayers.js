@@ -7,7 +7,6 @@ $(document).ready(() => {
             idArray.push(playerQueryId);
         });
 
-        console.log(idArray);
 
         for (let i = 0; i < idArray.length; i++) {
             setTimeout(function timer() {
