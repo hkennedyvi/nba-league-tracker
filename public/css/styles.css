@@ -19,7 +19,7 @@ body {
 
 .navbar {
     border: 3px solid white;
-    margin-bottom: 40px !important;
+    /* margin-bottom: 40px !important; */
 }
 
 .navbar-brand {
@@ -47,6 +47,7 @@ body {
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
+    border: 3px solid black;
 }
 
 #cardTitle {
@@ -57,6 +58,12 @@ body {
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
+    border: 3px solid black;
+}
+
+h3 {
+    font-family: fantasy;
+    margin-bottom: 20px;
 }
 
 .card-header {
@@ -70,7 +77,6 @@ body {
     color: white;
     padding: 10 !important;
     font-size: 25px;
-    margin: 5px !important;
 }
 
 .teamText {
@@ -129,9 +135,19 @@ hr {
 }
 
 .monthCard {
-    background-color: orange;
-    border-radius: 1rem;
-    /* opacity: .9; */
+    color: white;
+    text-shadow: black !important;
+    font-size: 20px;
+    /* font-weight: bold; */
+    font-family: fantasy;
+    border-bottom: 5px solid black;
+}
+
+#schedule {
+    background-image: url(../assets/img/scheduleListBackground.jpg);
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
 }
 
 .monthCard img {
@@ -140,4 +156,6 @@ hr {
     margin-right: 10px;
 }
 
-.teamHeader {}
+.teamHeader {
+    margin-top: 30px;
+}
