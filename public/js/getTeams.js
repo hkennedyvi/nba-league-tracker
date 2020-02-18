@@ -34,13 +34,15 @@ $(document).ready(function() {
 
                 const teamImg = $("<img>")
                     .attr("src", `./assets/img/nbaLogos/${response.id}.png`)
-                    .attr("class", "teamImgs2 col-s6 col-m6 col-lg-6");
+                    .attr("class", "teamImgs2 col-s6 col-m6 col-lg-6")
+                    .attr("style", "top: 30px !important;");
+
 
                 //appending the img to the page
                 $(".teamImg").append(teamImg);
 
                 const teamAlias = $("<li class='list-group-item' style='width: 80% !important; border: 3px solid black;'>").text(
-                    `${response.founded}`
+                    `Founded: ${response.founded}`
                 );
 
                 const teamConf = $("<li class='list-group-item' style='width: 80% !important; border: 3px solid black;'>").text(
