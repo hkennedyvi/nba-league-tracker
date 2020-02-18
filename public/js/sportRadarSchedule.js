@@ -16,11 +16,13 @@ $(document).ready(function() {
         let gameObj = {
           date: response.games[i].scheduled,
           home: response.games[i].home.name,
+          homeid: response.games[i].home.id,
           away: response.games[i].away.name,
+          awayid: response.games[i].away.id,
           home_points: response.games[i].home_points,
           away_points: response.games[i].away_points
         };
-
+        console.log(gameObj);
         let dateObjParsed = Date.parse(gameObj.date);
         let dateObj = new Date(dateObjParsed);
         let gameMonth = dateObj.toLocaleString("default", { month: "long" });
@@ -28,28 +30,20 @@ $(document).ready(function() {
         let gameDay = dateObj.toLocaleString("default", { weekday: "long" });
 
         if (gameMonth === todayMonth) {
-          let dailyDiv = $(`<div data-date="${gameDate}">`);
-          let p = $("<p>").text(
-            "Month: " +
-              gameMonth +
-              " " +
-              "Date: " +
-              gameDate +
-              " " +
-              "Home: " +
-              gameObj.home +
-              " " +
-              "Score: " +
-              gameObj.home_points +
-              " " +
-              "Away: " +
-              gameObj.away +
-              " " +
-              "Score: " +
-              gameObj.away_points
-          );
+          let dailyDiv = $(`<div data-date="${gameDate}" class=mb-2>`);
+          let gameCard = $("<div class=monthCard>");
+          let cardBody = $("<div class=card-body>");
+          let day = $("<p>").text(gameMonth + " " + gameDate);
+          let homeTeam = $("<p>").text(gameObj.home +"  "+ gameObj.home_points);
+          let homeImg = $("<img>").attr("src", `/assets/img/nbaLogos/${gameObj.homeid}.png`);
+          let awayTeam = $("<p>").text(gameObj.away +"  "+ gameObj.away_points);
+          let awayImg = $("<img>").attr("src", `/assets/img/nbaLogos/${gameObj.awayid}.png`);
 
-          dailyDiv.append(p);
+          homeTeam.prepend(homeImg);
+          awayTeam.prepend(awayImg);
+          cardBody.append(day).append(homeTeam).append(awayTeam);
+          gameCard.append(cardBody);
+          dailyDiv.append(gameCard);
 
           $("#schedule").append(dailyDiv);
         }
