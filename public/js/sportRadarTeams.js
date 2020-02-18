@@ -1,6 +1,6 @@
 $(document).ready(function() {
   const teamsCall =
-    "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/league/hierarchy.json?api_key=y8panhwvn9mvan3qad5efwug";
+    "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/league/hierarchy.json?api_key=bsqq9a96h7trberae9wu4bp3";
 
   $.ajax({
     url: teamsCall,
