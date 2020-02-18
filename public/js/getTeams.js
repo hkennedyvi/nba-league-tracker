@@ -1,19 +1,18 @@
 $(document).ready(function() {
-    //function for clicking on team and generating response
-    $("ul").on("click", "li", function() {
-        const teamId = $(this).attr("value");
+  //function for clicking on team and generating response
+  $("ul").on("click", "li", function() {
+    const teamId = $(this).attr("value");
 
-        $.ajax({
-            url: `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/teams/${teamId}/profile.json?api_key=bsqq9a96h7trberae9wu4bp3`,
-            method: "GET",
-            dataType: "json",
-            success: function(response) {
-                console.log(response);
-                const teamPlayers = response.players;
-                $("ul").hide();
-                const playerList = teamPlayers.map(player => {
-                    //maps returns the players in a card div
-                    return `<div class="card text-white shadow-lg" style="max-width: 100%; float: left;">
+    $.ajax({
+      url: `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/teams/${teamId}/profile.json?api_key=bsqq9a96h7trberae9wu4bp3`,
+      method: "GET",
+      dataType: "json",
+      success: function(response) {
+        const teamPlayers = response.players;
+        $("ul").hide();
+        const playerList = teamPlayers.map(player => {
+          //maps returns the players in a card div
+          return `<div class="card text-white shadow-lg" style="max-width: 100%; float: left;">
 
                 <div class="card-header bg-primary">
                   <h3>${player.full_name}</h3>
@@ -96,6 +95,6 @@ $(document).ready(function() {
                         });
                 });
             }
-        });
     });
+  });
 });

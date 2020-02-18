@@ -6,8 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     api_id: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
+      allowNull: false
     }
   });
 

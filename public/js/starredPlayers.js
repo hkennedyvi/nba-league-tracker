@@ -6,9 +6,6 @@ $(document).ready(() => {
       const playerQueryId = playerId.api_id;
       idArray.push(playerQueryId);
     });
-
-    console.log(idArray);
-
     for (let i = 0; i < idArray.length; i++) {
       setTimeout(function timer() {
         $.ajax({
@@ -17,8 +14,6 @@ $(document).ready(() => {
           method: "GET",
           dataType: "json",
           success: function(response) {
-            console.log(response);
-
             const starredPlayer = () => {
               return `<div class="card text-white shadow-lg ${response.id}" style="max-width: 100%; float:left; margin-top:20px !important;">
 
@@ -47,7 +42,6 @@ $(document).ready(() => {
 
   $("body").on("click", ".deleteplayer", function() {
     const id = $(this).attr("value");
-    console.log(id);
     $.ajax({
       method: "DELETE",
       url: "/api/starred/" + id
