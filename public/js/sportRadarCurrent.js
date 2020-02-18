@@ -12,7 +12,6 @@ trial/v7/en/games/2020/01/25/schedule.json?api_key=bsqq9a96h7trberae9wu4bp3`;
     dataType: "json",
     success: function(response) {
       const gamesArray = response.games;
-      console.log(gamesArray);
       const CurrentGames = gamesArray.map(gamesObject => {
         if (gamesObject.status === "scheduled") {
           gamesObject.home_points = " ";

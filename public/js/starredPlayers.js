@@ -7,7 +7,6 @@ $(document).ready(() => {
       idArray.push(playerQueryId);
     });
 
-    console.log(idArray);
 
     for (let i = 0; i < idArray.length; i++) {
       setTimeout(function timer() {
@@ -47,7 +46,6 @@ $(document).ready(() => {
 
   $("body").on("click", ".deleteplayer", function() {
     const id = $(this).attr("value");
-    console.log(id);
     $.ajax({
       method: "DELETE",
       url: "/api/starred/" + id

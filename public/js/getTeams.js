@@ -52,9 +52,6 @@ $(document).ready(function() {
             .text();
           style = "height:100px;";
 
-          console.log(playerId);
-          console.log(playerName);
-
           const data = { name: playerName, api_id: playerId };
 
           fetch("/api/saveplayer", {
