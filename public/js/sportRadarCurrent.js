@@ -27,8 +27,8 @@ trial/v7/en/games/2020/01/25/schedule.json?api_key=bsqq9a96h7trberae9wu4bp3`;
                 </div>
                 <div class="card-body bg-light">
                   <ul class="list-group list-group-flush text-dark shadow-sm">
-                    <li class="list-group-item">VENUE:<hr> ${gamesObject.venue.name}</li>
-                    <li class="list-group-item">HOME TEAM:<hr> ${gamesObject.home.name}</li>
+                    <li class="list-group-item" style="margin-bottom: 5px;">VENUE:<hr> ${gamesObject.venue.name}</li>
+                    <li class="list-group-item" style="margin-bottom: 5px;">HOME TEAM:<hr> ${gamesObject.home.name}</li>
                     <li class="list-group-item">AWAY TEAM:<hr> ${gamesObject.away.name}</li>
                   </ul>
                 </div>
