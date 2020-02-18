@@ -36,7 +36,9 @@ $(document).ready(function() {
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    const logInBtn = $("<a href=/login>").text("click here to login");
+    $("#alert .msg").text("email exists! ");
+    $("#alert").append(logInBtn);
     $("#alert").fadeIn(500);
   }
 });
