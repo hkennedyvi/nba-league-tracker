@@ -4,7 +4,7 @@ $(document).ready(function() {
     const teamId = $(this).attr("value");
 
     $.ajax({
-      url: `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/teams/${teamId}/profile.json?api_key=bsqq9a96h7trberae9wu4bp3`,
+      url: `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/teams/${teamId}/profile.json?api_key=ymmq6xucxgp35g8k349me4d6`,
       method: "GET",
       dataType: "json",
       success: function(response) {
@@ -27,74 +27,75 @@ $(document).ready(function() {
                 </div>
 
               </div>`;
-                });
-                //appending the player cards to the page
-                $(".teamplayers").append(playerList);
+        });
+        //appending the player cards to the page
+        $(".teamplayers").append(playerList);
 
-                const teamImg = $("<img>")
-                    .attr("src", `./assets/img/nbaLogos/${response.id}.png`)
-                    .attr("class", "teamImgs2 col-s6 col-m6 col-lg-6")
-                    .attr("style", "top: 30px !important;");
+        const teamImg = $("<img>")
+          .attr("src", `./assets/img/nbaLogos/${response.id}.png`)
+          .attr("class", "teamImgs2 col-s6 col-m6 col-lg-6")
+          .attr("style", "top: 30px !important;");
 
+        //appending the img to the page
+        $(".teamImg").append(teamImg);
 
-                //appending the img to the page
-                $(".teamImg").append(teamImg);
+        const teamAlias = $(
+          "<li class='list-group-item' style='width: 80% !important; border: 3px solid black;'>"
+        ).text(`Founded: ${response.founded}`);
 
-                const teamAlias = $("<li class='list-group-item' style='width: 80% !important; border: 3px solid black;'>").text(
-                    `Founded: ${response.founded}`
-                );
+        const teamConf = $(
+          "<li class='list-group-item' style='width: 80% !important; border: 3px solid black;'>"
+        ).text(`${response.conference.name}`);
 
-                const teamConf = $("<li class='list-group-item' style='width: 80% !important; border: 3px solid black;'>").text(
-                    `${response.conference.name}`
-                );
+        const teamDiv = $(
+          "<li class='list-group-item' style='width: 80% !important; border: 3px solid black;'>"
+        ).text(`${response.division.name} Division`);
 
-                const teamDiv = $("<li class='list-group-item' style='width: 80% !important; border: 3px solid black;'>").text(
-                    `${response.division.name} Division`
-                );
+        const teamCoach = $(
+          "<li class='list-group-item' style='width: 80% !important; border: 3px solid black;'>"
+        ).text(`Coach: ${response.coaches[0].full_name}`);
 
-                const teamCoach = $("<li class='list-group-item' style='width: 80% !important; border: 3px solid black;'>").text(
-                    `Coach: ${response.coaches[0].full_name}`
-                );
+        const teamLength = $(
+          "<li class='list-group-item' style='width: 80% !important; border: 3px solid black;'>"
+        ).text(`Players: ${response.players.length}`);
 
-                const teamLength = $("<li class='list-group-item' style='width: 80% !important; border: 3px solid black;'>").text(
-                    `Players: ${response.players.length}`
-                );
+        $(".teamInfo")
+          .append(teamAlias)
+          .append(teamConf)
+          .append(teamDiv)
+          .append(teamCoach)
+          .append(teamLength);
 
-                $(".teamInfo").append(teamAlias).append(teamConf).append(teamDiv).append(teamCoach).append(teamLength);
+        $("button").on("click", function() {
+          const playerId = $(this).attr("value");
+          const playerName = $(this)
+            .prev()
+            .text();
+          style = "height:100px;";
 
+          console.log(playerId);
+          console.log(playerName);
 
+          const data = { name: playerName, api_id: playerId };
 
-
-                $("button").on("click", function() {
-                    const playerId = $(this).attr("value");
-                    const playerName = $(this)
-                        .prev()
-                        .text();
-                    style = "height:100px;";
-
-                    console.log(playerId);
-                    console.log(playerName);
-
-                    const data = { name: playerName, api_id: playerId };
-
-                    fetch("/api/saveplayer", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify(data)
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.error === "player already starred") {
-                                alert("Player Already Starred");
-                            }
-                        })
-                        .catch(error => {
-                            console.log("Error:", error);
-                        });
-                });
-            }
+          fetch("/api/saveplayer", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data.error === "player already starred") {
+                alert("Player Already Starred");
+              }
+            })
+            .catch(error => {
+              console.log("Error:", error);
+            });
+        });
+      }
     });
   });
 });

@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "nbafanboi",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,17 +9,20 @@
     "watch": "nodemon server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix ."
+  },  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hkennedyvi/project2.github.io"
   },
   "parser": "babel-eslint",
   "keywords": [],
-  "author": "",
+  "author": "abdullah @tcanbolat, Anil @Anil1992-rgb, Howard @hkennedyvi, Max @maxskewes",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
     "babel-eslint": "^10.0.3",
     "bcryptjs": "2.4.3",
     "dotenv": "^8.2.0",
-    "dotenv-webpack": "^1.7.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.16.1",

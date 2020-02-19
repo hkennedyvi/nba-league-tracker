@@ -4,7 +4,7 @@ $(document).ready(function() {
   // const day = moment().format("D");
 
   const CurrentGamesCall = `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/
-trial/v7/en/games/2020/01/25/schedule.json?api_key=bsqq9a96h7trberae9wu4bp3`;
+trial/v7/en/games/2020/01/25/schedule.json?api_key=ymmq6xucxgp35g8k349me4d6`;
 
   $.ajax({
     url: CurrentGamesCall,
