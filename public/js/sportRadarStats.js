@@ -7,7 +7,6 @@ const statsQuery =
 const standingsQuery =
   "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/standings.json?api_key=" +
   authKey2;
-
 $(document).ready(function() {
   $.ajax({
     url: statsQuery,
