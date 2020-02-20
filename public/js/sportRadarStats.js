@@ -1,11 +1,12 @@
-const authKey = "6adwam4h8umugdtsftp4wwae";
+//backupkey - 6adwam4h8umugdtsftp4wwae
+const authKey = "wd9hv3mu6kuqnts4cpyggqye";
+const authKey2 = "bsqq9a96h7trberae9wu4bp3";
 const statsQuery =
   "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/leaders.json?api_key=" +
   authKey;
 const standingsQuery =
   "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/seasons/2019/REG/standings.json?api_key=" +
-  authKey;
-
+  authKey2;
 $(document).ready(function() {
   $.ajax({
     url: statsQuery,

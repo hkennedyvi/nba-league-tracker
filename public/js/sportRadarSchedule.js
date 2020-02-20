@@ -1,4 +1,4 @@
-const authKey = "bsqq9a96h7trberae9wu4bp3";
+const authKey = "wd9hv3mu6kuqnts4cpyggqye";
 const scheduleQuery =
   "https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/games/2019/REG/schedule.json?api_key=" +
   authKey;

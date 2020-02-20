@@ -1,16 +1,20 @@
 $(document).ready(function() {
-  // const year = moment().format("YYYY");
-  // const month = moment().format("MM");
-  // const day = moment().format("D");
+  const year = moment().format("YYYY");
+  const month = moment().format("MM");
+  const day = moment().format("D");
 
   const CurrentGamesCall = `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/
-trial/v7/en/games/2020/01/25/schedule.json?api_key=bsqq9a96h7trberae9wu4bp3`;
+trial/v7/en/games/${year}/${month}/${day}/schedule.json?api_key=ymmq6xucxgp35g8k349me4d6`;
 
   $.ajax({
     url: CurrentGamesCall,
     method: "GET",
     dataType: "json",
     success: function(response) {
+      console.log();
+      if (response.games.length === 0) {
+        alert("no games today, please check schedule");
+      }
       const gamesArray = response.games;
       const CurrentGames = gamesArray.map(gamesObject => {
         if (gamesObject.status === "scheduled") {

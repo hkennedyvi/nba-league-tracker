@@ -9,7 +9,7 @@ $(document).ready(() => {
     for (let i = 0; i < idArray.length; i++) {
       setTimeout(function timer() {
         $.ajax({
-          url: `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/players/${idArray[i]}/profile.json?api_key=bsqq9a96h7trberae9wu4bp3`,
+          url: `https://cors-anywhere.herokuapp.com/http://api.sportradar.us/nba/trial/v7/en/players/${idArray[i]}/profile.json?api_key=ymmq6xucxgp35g8k349me4d6`,
 
           method: "GET",
           dataType: "json",
