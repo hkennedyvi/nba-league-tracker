@@ -8,6 +8,9 @@ A complete NBA fan application that gives users real-time scores of games-in- pr
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 
+or visit the deployed link via Heroku here: https://nbafanboi.herokuapp.com/
+
+
 ### Prerequisites
 
 Here is a list of the required dependencies:
