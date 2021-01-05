@@ -19,7 +19,7 @@
   "author": "abdullah @tcanbolat, Anil @Anil1992-rgb, Howard @hkennedyvi, Max @maxskewes",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-eslint": "^10.0.3",
     "bcryptjs": "2.4.3",
     "dotenv": "^8.2.0",
